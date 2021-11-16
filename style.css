@@ -1,0 +1,444 @@
+html,
+body {
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #64c29e;
+  --header-color: #5c5d5e;
+  --description-color: #8d9092;
+  --light-header-color: #4d4959;
+  --border-color: #d3d7d9;
+  --input-color: #cdcdcd;
+  --bg-light: #f7f7f7;
+  --bg-dark: #1a1c28;
+}
+
+.wrapper {
+  width: 160rem;
+}
+
+.header {
+  min-height: 80rem;
+  background-image: url(./images/hero.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  padding-top: 3.3rem;
+}
+.nav__list {
+  list-style: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.nav__item {
+  padding: 0 3.2rem;
+  position: relative;
+}
+.nav__item:first-child::after, .nav__item:nth-child(4)::after {
+  content: ".";
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+.nav__link {
+  text-transform: uppercase;
+  color: var(--light-header-color);
+  text-decoration: none;
+  display: block;
+}
+
+.feature__header {
+  padding: 11rem 1.5rem 14rem;
+  text-align: center;
+  font-size: 1.8rem;
+  background-color: var(--bg-light);
+}
+.feature__header-desc {
+  line-height: 1.6;
+  max-width: 107rem;
+  margin: 0 auto;
+}
+.feature__heading {
+  color: var(--header-color);
+  text-transform: uppercase;
+  margin: 3rem 0;
+  line-height: 1.6;
+  font-size: 1.8rem;
+}
+.feature .img__bg {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+.feature__item {
+  display: flex;
+  height: 60rem;
+  flex-flow: row wrap;
+  overflow: hidden;
+}
+.feature__item .feature__item-img {
+  width: 67%;
+  position: relative;
+}
+.feature__item .feature__item-content {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.feature__item .feature__item-content-top {
+  padding: 7rem;
+  text-align: center;
+  height: 67%;
+  position: relative;
+}
+.feature__item .feature__item-content-top:after {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  background-color: white;
+}
+.feature__item .feature__item-content-top::before {
+  content: "";
+  width: 5rem;
+  height: 2px;
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bg-light);
+}
+.feature__item .feature__item-content-bottom {
+  height: 33%;
+}
+.feature__item-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--description-color);
+  text-align: justify;
+}
+.feature__item .img__brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.feature__item:nth-child(2) .feature__item-img {
+  order: 2;
+}
+.feature__item:last-child .feature__item-img {
+  width: 33%;
+}
+.feature__item:last-child .feature__item-content {
+  width: 34%;
+}
+
+.tweet {
+  min-height: 46.9rem;
+  background-color: var(--bg-light);
+  padding: 12.4rem 26.2rem 6.8rem 30rem;
+  text-align: center;
+}
+.tweet__icon {
+  margin-bottom: 3.5rem;
+  font-size: 3rem;
+  color: #56c7ee;
+}
+.tweet__heading {
+  margin-bottom: 3rem;
+}
+.tweet__location, .tweet__author {
+  color: var(--header-color);
+  font-size: 1.8rem;
+}
+.tweet__author, .tweet__time {
+  margin-left: 1.3rem;
+}
+.tweet__time {
+  font-size: 1.8rem;
+  font-weight: 300;
+  position: relative;
+  color: var(--description-color);
+  padding-left: 1.4rem;
+}
+.tweet__time::after {
+  content: " / ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.8rem;
+}
+.tweet__desc {
+  color: var(--description-color);
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 10rem;
+  max-width: 103.7rem;
+}
+.tweet__page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tweet__page-item {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--description-color);
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.tweet__page-item.active {
+  background-color: var(--description-color);
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  height: 53.4rem;
+  width: 100%;
+  overflow: hidden;
+}
+.images__block {
+  display: flex;
+  flex-direction: column;
+  width: 33.333%;
+  height: 100%;
+}
+.images__block-item {
+  display: flex;
+  height: 50%;
+  width: 100%;
+}
+.images__block-item:last-of-type .images__item {
+  width: 100%;
+}
+.images__block:last-child {
+  flex-direction: column-reverse;
+}
+.images__block:nth-child(2) .images__block-item {
+  height: 100%;
+}
+.images__item {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+}
+.images__item-brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.images__item-brand-logo {
+  display: block;
+  margin: 0 auto;
+  width: 5.6rem;
+  height: 3.2rem;
+}
+.images__item-bg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.images__item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #70c6a6c9;
+  display: none;
+}
+.images__item-text {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+}
+.images__item:hover::before, .images__item:hover .images__item-brand {
+  display: block;
+}
+
+.discover {
+  padding: 7rem 1.5rem;
+  background-color: var(--bg-dark);
+  text-align: center;
+}
+.discover__btn {
+  display: inline-block;
+  min-width: 30rem;
+  padding: 2rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  color: white;
+  border: 1px solid currentColor;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+.discover__btn:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.mail {
+  text-align: center;
+  padding: 10.7em 1.5rem;
+}
+.mail__logo {
+  margin: 0 auto 3rem;
+  display: block;
+}
+.mail__text {
+  margin-bottom: 3rem;
+  font-style: italic;
+  color: var(--description-color);
+  display: block;
+  font-size: 1.8rem;
+}
+.mail__form {
+  max-width: 53.4rem;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.mail__form-input {
+  width: 74%;
+  padding: 2.5rem;
+  border: 1px solid var(--border-color);
+  font-size: 2rem;
+  outline: 0;
+  color: var(--description-color);
+  font-style: italic;
+  margin-right: 1rem;
+}
+.mail__form-input::placeholder {
+  color: var(--input-color);
+  font-style: italic;
+}
+.mail__form-btn {
+  width: 25%;
+  text-transform: uppercase;
+  color: white;
+  font-size: 2.4rem;
+  background-color: var(--primary-color);
+  border: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn__collapse {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  nav {
+    width: 100%;
+  }
+
+  .nav__item {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .nav__item:after {
+    display: none;
+  }
+
+  .btn__collapse,
+.nav__bg {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    border-radius: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .nav__bg {
+    background-color: #eee;
+    z-index: 8;
+    transition: transform 0.25s linear;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    transform: translateX(-100%);
+    transition: transform 0.25s linear;
+  }
+
+  .inp__collapse:checked + .nav__bg {
+    transform: scale(80);
+  }
+
+  .inp__collapse:checked ~ .nav__list {
+    transform: translateX(0);
+  }
+
+  .feature__item {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .feature .feature__item > .feature__item-img,
+.feature .feature__item > .feature__item-content {
+    width: 100%;
+  }
+
+  .images {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .images__block {
+    width: 100%;
+  }
+
+  .images__item {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1179px) {
+  .feature__item .feature__item-content-top {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
